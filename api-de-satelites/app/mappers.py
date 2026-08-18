@@ -6,7 +6,7 @@ from .models import SateliteModel
 class SateliteMapper:
 
     @staticmethod
-    def to_domain_schema_create(satelite: SateliteCreate) -> Satelite:
+    def to_domain_create(satelite: SateliteCreate) -> Satelite:
         return Satelite(
             id = None,
             nome= satelite.nome,
@@ -14,7 +14,7 @@ class SateliteMapper:
         )
 
     @staticmethod
-    def domain_to_schema_read(satelite: Satelite) -> SateliteRead:
+    def to_schema_read(satelite: Satelite) -> SateliteRead:
         return SateliteRead(
             id = satelite.id,
             nome = satelite.nome,

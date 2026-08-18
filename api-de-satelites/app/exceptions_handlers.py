@@ -1,11 +1,25 @@
-# TODO: implemente aqui a tradução das exceções de domínio para respostas HTTP.
-#
-# Ideia: usar @app.exception_handler(SuaExcecao) no main.py, registrando
-# funções definidas aqui, ao invés de try/except espalhado nas rotas.
-#
-# Pense em: qual status HTTP faz sentido pra cada exceção de domínio?
-# - BateriaInsuficienteError -> ?
-# - TransicaoInvalidaError   -> ?
-#
-# def bateria_insuficiente_handler(request, exc): ...
-# def transicao_invalida_handler(request, exc): ...
+from fastapi import Request
+from fastapi.responses import JSONResponse
+from domain.exceptions import BateriaInsuficienteError, TransicaoInvalidaError
+
+
+async def bateria_insuficiente_handler(request: Request, exc: BateriaInsuficienteError):
+    status_code = 409
+    return JSONResponse(
+        status_code=status_code,
+        content={"detail": str(exc)},
+    )
+
+async def transicao_invalida_handler(request: Request, exc: TransicaoInvalidaError):
+    status_code = 409
+    return JSONResponse(
+        status_code=status_code,
+        content={"detail": str(exc)},
+    )
+
+async def value_error_handler(request: Request, exc: ValueError):
+    status_code = 404
+    return JSONResponse(
+        status_code=status_code,
+        content={"detail": str(exc)},
+    )
