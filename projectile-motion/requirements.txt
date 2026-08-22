@@ -1,0 +1,13 @@
+# domínio / cálculo
+numpy
+
+# visualização
+matplotlib
+ipympl
+
+# notebook
+jupyter
+ipykernel
+
+# testes
+pytest

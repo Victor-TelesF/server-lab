@@ -1,0 +1,17 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Configuração de IDE (se usar VS Code com settings locais)
+.vscode/
+
+# Sistema
+.DS_Store
