@@ -1,0 +1,24 @@
+[project]
+name = "experiments"
+version = "0.1.0"
+description = "Espaço de estudo com notebooks de Python, NumPy, Pandas e álgebra linear"
+readme = "README.md"
+authors = [
+    { name = "victor", email = "victortf986@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel",
+    "ipympl",
+    "jupyter",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "polars",
+    "pytest",
+    "seaborn",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13"]
+build-backend = "uv_build"
