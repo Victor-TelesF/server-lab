@@ -47,3 +47,5 @@ class TrajectoryEngine(Engine):
             x, y = self.position_at(t)
             points.append({"t": t, "x": x, "y": y})
         return points
+
+    
