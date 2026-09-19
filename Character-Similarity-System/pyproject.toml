@@ -1,10 +1,29 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "character-similarity-system"
 version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "victor", email = "victortf986@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "ipykernel>=7.3.0",
+    "ipympl>=0.10.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "networkx>=3.6.1",
+    "numpy>=2.5.3",
+    "pydantic>=2.13.5",
+    "pytest>=9.1.1",
+    "seaborn>=0.13.2",
+    "sqlalchemy>=2.0.54",
+]
 
-[tool.setuptools.packages.find]
-include = ["domain*"]
+[project.scripts]
+character-similarity-system = "character_similarity_system:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
